@@ -1,8 +1,17 @@
 # 📄 DocExtract — استخراج المستندات العلمية (عربي + معادلات)
 
+![CI](https://github.com/youcef81dz5-blip/MatheEasy/actions/workflows/ci.yml/badge.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+
 مشروع أكاديمي MVP: يحوّل المستندات المعقدة (PDF ممسوح ضوئياً، صور، DOCX...) إلى **Markdown + معادلات LaTeX** قابل للنسخ والتحرير، مع طبقة تصحيح بالذكاء الاصطناعي.
 
 **التكلفة: 0$** — يعتمد على MinerU Cloud API المجاني (1000 صفحة/يوم) و Gemini API المجاني.
+
+## لقطات من التطبيق
+
+| الواجهة الرئيسية | المعاينة المنسقة (KaTeX) |
+|:---:|:---:|
+| ![الواجهة](docs/screenshot_ui.png) | ![المعاينة](docs/screenshot_preview.png) |
 
 ## البنية
 
@@ -81,10 +90,14 @@ docextract/
 ├── src/
 │   ├── extractor_mineru.py   # Precision + Flash + fallback تلقائي
 │   ├── corrector.py          # تصحيح LaTeX/عربي عبر Gemini
-│   └── exporter.py           # تصدير .md/.tex/.docx (pandoc اختياري)
+│   └── exporter.py           # تصدير .md/.tex/.docx (معادلات Word أصلية OMML)
 ├── evaluation/
 │   ├── evaluate.py           # CER + Formula Accuracy
 │   └── testset/              # العينات
+├── tests/smoke.py            # اختبارات سريعة (تُستخدم في CI)
+├── .github/workflows/ci.yml  # اختبار تلقائي عند كل push
+├── docs/                     # لقطات الشاشة
+├── LICENSE                   # MIT
 ├── requirements.txt
 └── run.bat
 ```
