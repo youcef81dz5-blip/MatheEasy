@@ -398,9 +398,4 @@ with gr.Blocks(title="DocExtract — استخراج المستندات العل�
 
 if __name__ == "__main__":
     demo.queue()
-    demo.launch(
-        theme=THEME,
-        css=CUSTOM_CSS,
-        server_name=os.getenv("SERVER_NAME", "127.0.0.1"),
-        server_port=int(os.getenv("PORT", "7860")),
-    )
+    demo.launch(theme=THEME, css=CUSTOM_CSS, ssr_mode=False)

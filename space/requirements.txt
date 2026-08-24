@@ -1,0 +1,7 @@
+mineru-open-sdk==0.2.5
+google-genai==2.19.0
+pymupdf==1.28.2
+python-docx==1.2.0
+Markdown==3.10.3
+latex2mathml==3.81.0
+mathml2omml==0.0.2
